@@ -1,38 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Yeon+Sung&display=swap");
+* {
+  font-family: "Yeon Sung", cursive;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center;
 
-.App-link {
-  color: #61dafb;
+  width: 100%;
+  min-width: 800px;
+  max-width: 1200px;
+  margin: auto;
 }
+header {
+  width: 100%;
+  height: 100px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  width: 100%;
+  height: 100px;
+
+  background-color: lavender;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 0px 40px 0px 40px;
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputText {
+  font-size: 25px;
+}
+.inputBox {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  margin: 0px 20px 0px 20px;
+  font-size: 20px;
+}
+.addButton {
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(177, 142, 222);
+  font-size: 20px;
+}
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.mainTitle {
+  font-size: 30px;
+}
+.mainContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mainContentindi {
+  width: 300px;
+  height: 170px;
+  border: 3.5px solid rgb(177, 142, 222);
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 10px 15px 10px 0px;
+  padding-left: 20px;
+}
+.mainContentindi > h2 {
+  font-size: 25px;
+  margin: 20px 0px 15px 0px;
+}
+.mainContentindi > p {
+  font-size: 20px;
+  margin: 0px 0px 15px 0px;
+}
+.mainContentindiButton > button {
+  margin-right: 10px;
+  background-color: transparent;
+  border: 3px solid rgb(177, 142, 222);
+  border-radius: 13px;
+  width: 80px;
+  height: 35px;
+  font-size: 17px;
+}
+.mainContentindiButton :hover {
+  background-color: rgb(177, 142, 222);
 }
