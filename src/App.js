@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./App.css";
-
+// input값을 객체로 받아서 따로 받지 말고 하나로 합치자
 function App() {
   let [todo, setTodo] = useState([
     {
@@ -71,6 +71,7 @@ function App() {
             onChange={(e) => {
               setTempTitle(e.target.value);
             }}
+            // 이렇게 할 수도 있지만 onChange에다가 넘겨서 할 수 있다.
             ref={(element) => (inputRef.current[0] = element)}
           />
           <span className="inputText">내용</span>
