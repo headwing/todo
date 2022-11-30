@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -41,14 +41,24 @@ function App() {
     setTodo([...newTodoList, changeTodo]);
   };
 
-  const clearInput = () => {
-    let clear = document.getElementsByClassName("inputBox");
-    for (let i = 0; i < clear.length; i++) {
-      clear[i].value = "";
-    }
+  const inputRef = useRef([]);
+
+  function clearInput() {
+    inputRef.current[0].value = "";
+    inputRef.current[1].value = "";
     setTempTitle("");
     setTempContent("");
-  };
+  }
+  // 아래는 자바스크립트의 HTML collection을 사용하여 input박스의 값을 지우는 방법인데, 지양된다고 한다.
+  // const clearInput = () => {
+  //   let clear = document.getElementsByClassName("inputBox");
+  //   for (let i = 0; i < clear.length; i++) {
+  //     clear[i].value = "";
+  //   }
+  //   setTempTitle("");
+  //   setTempContent("");
+  // };
+
   return (
     <div className="App">
       <header>My To DO List</header>
@@ -61,6 +71,7 @@ function App() {
             onChange={(e) => {
               setTempTitle(e.target.value);
             }}
+            ref={(element) => (inputRef.current[0] = element)}
           />
           <span className="inputText">내용</span>
           <input
@@ -68,6 +79,7 @@ function App() {
             onChange={(e) => {
               setTempContent(e.target.value);
             }}
+            ref={(element) => (inputRef.current[1] = element)}
           />
         </div>
 
