@@ -27,6 +27,8 @@ function App() {
       };
       setTodo([...todo, newTodo]);
     }
+    setTempTitle("");
+    setTempContent("");
   };
 
   const deleteTodoHandler = (id) => {
@@ -41,14 +43,14 @@ function App() {
     setTodo([...newTodoList, changeTodo]);
   };
 
-  const inputRef = useRef([]);
+  // const inputRef = useRef([]);
 
-  function clearInput() {
-    inputRef.current[0].value = "";
-    inputRef.current[1].value = "";
-    setTempTitle("");
-    setTempContent("");
-  }
+  // function clearInput() {
+  //   inputRef.current[0].value = "";
+  //   inputRef.current[1].value = "";
+  //   setTempTitle("");
+  //   setTempContent("");
+  // }
   // 아래는 자바스크립트의 HTML collection을 사용하여 input박스의 값을 지우는 방법인데, 지양된다고 한다.
   // const clearInput = () => {
   //   let clear = document.getElementsByClassName("inputBox");
@@ -72,7 +74,8 @@ function App() {
               setTempTitle(e.target.value);
             }}
             // 이렇게 할 수도 있지만 onChange에다가 넘겨서 할 수 있다.
-            ref={(element) => (inputRef.current[0] = element)}
+            // ref={(element) => (inputRef.current[0] = element)}
+            value={tempTitle}
           />
           <span className="inputText">내용</span>
           <input
@@ -80,7 +83,8 @@ function App() {
             onChange={(e) => {
               setTempContent(e.target.value);
             }}
-            ref={(element) => (inputRef.current[1] = element)}
+            value={tempContent}
+            // ref={(element) => (inputRef.current[1] = element)}
           />
         </div>
 
@@ -88,7 +92,7 @@ function App() {
           className="addButton"
           onClick={() => {
             addTodoHandler();
-            clearInput();
+            // clearInput();
           }}
         >
           추가!
